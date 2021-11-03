@@ -1,0 +1,38 @@
+Na stronach rozwijanej od początku semestru witryny WWW należy: 
+
+
+
+
+
+Funkcje  JavaScript  do  poszczególnych  zadań  powinny  znajdować  sie  w  osobnych 
+plikach .js 
+
+
+Przed  przystąpieniem  do  realizacji  ćwiczenia  sugeruje  się  przestudiowanie  z 
+podręcznika IWWWHtP5 rozdziałów 12. i 13. 
+
+Po  zakończeniu  pracy  skrypty  należy  zwalidować  wykorzystując  serwis: 
+http://www.javascriptlint.com/,  http://www.jslint.com/ lub inny.
+
+3.  Umożliwić użytkownikowi zmianę na żądanie stylów CSS: koloru tła, koloru tekstu, 
+rodzaju czcionki (z listy).  
+
+5.  W formularzach wykorzystać zdarzenia focus i blur do wyświetlania tekstów 
+pomocy oraz zdarzenia submit i reset do wyzwalania okien potwierdzających. 
+
+4.  Zademonstrować możliwości właściwości altKey, ctrlKey, shiftKey 
+keyCode,  clientX, clientY, screenX, screenY obiektu event. 
+
+
+1.  Zademonstrować działanie metod JavaScript: createElement, 
+createTextNode, appendChild, insertBefore, 
+replaceChild, removeChild  oraz właściwości parentNode. 
+
+Wykorzystać zdarzenia: mousemove, mouseover, mouseout. 
+
+DO ZAD 4 (MOUSE):
+https://www.w3.org/TR/DOM-Level-2-Events/events.html#Events-Event-initMouseEvent
+
+W EXAMPE W 13 rozdziale bylo pole do rysowania z użyciem klawiszy xD 
+A z myszka byla zmiana czegos po najechaniu (kolor/wartosc)
+2.  Zademonstrować działanie kolekcji: images, links, forms
