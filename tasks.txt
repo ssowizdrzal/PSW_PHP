@@ -11,23 +11,20 @@ stosowne komunikaty.
 W skrypcie przetwarzającym dane z formularza należy pokazać umiejętność posługiwania się
 następującymi elementami lub właściwościami języka PHP:
 • typowanie dynamiczne, konwersja typów, rzutowanie,
-• stałe,
-• operatory przypisania, operatory porównania, pierwszeństwo
-operatorów,
+
 • tablice indeksowane numerycznie i tablice asocjacyjne,
 • funkcje count, reset, key, next,
 • wyrażenia regularne, funkcje preg_match, preg_replace,
-• porównywanie łańcuchów (operatory), znaki specjalne w łańcuchach (rola
-odwrotnego ukośnika),
-• inne tablice superglobalne (np. ujawnianie w odpowiedzi serwera adresu IP klienta),
+• znaki specjalne w łańcuchach (rola odwrotnego ukośnika),
 • funkcja die.
-
+• inne tablice superglobalne (np. ujawnianie w odpowiedzi serwera adresu IP klienta) - mam pokazywanie IP ale nic wiecej
 ------------------
 zrobione:
-• porównywanie łańcuchów (funkcje)
+• stałe,
+• porównywanie łańcuchów (funkcje, operatory),
 • for i foreach 
-• operatory arytmetyczne,
-
+• operatory arytmetyczne, operatory przypisania, operatory porównania, pierwszeństwo operatorów(https://www.php.net/manual/en/language.operators.precedence.php)
+• inne tablice superglobalne (np. ujawnianie w odpowiedzi serwera adresu IP klienta) - mam pokazywanie IP ale nic wiecej
 
  -------------
 
