@@ -122,10 +122,7 @@ input[type="color"] {
 
 
 form.form-join-us {
-    background-image: url(../img/stars2.png);
-    background-repeat: repeat;
-    background-position: center;
-    background-origin: content-box;
+    background: var(--main-color);
 
 }
 
@@ -140,20 +137,11 @@ form div:not(:last-child) {
     clear:both;
 }
 
-form.form-personal {
-    background-image: url(../img/stars2.png);
-    background-repeat: round;
-    background-position: 10px 10px;
-    background-origin: padding-box;
-
-}
-
 form.form-personal label, p {
 
     font-weight: bold;
 
 }
-
 
 form.form-personal div:not(.separated-full) {
 
