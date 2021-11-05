@@ -15,7 +15,7 @@
    <body>
    
       <p>Hi <?php print( $_POST["name"] ); ?>, Dzieki za wypelnienie ankiety</p>
-      <p class = "head">Te dane zostały zapisane o tobie ruro:</p>
+      <p class = "head">Te dane zostały zapisane o tobie:</p>
       <p>Name: <?php print( $_POST["name"] ); 
          print( $_POST["surname"] ); ?></p>
       <p>Email: <?php print( $_POST["month"] ); ?></p>
@@ -29,9 +29,30 @@
             }
          }
          if($znaleziono==0){
-            echo 'Email poprawny.';
+            echo 'Email poprawny. <br />';
          }else{
-            echo 'Email na czarnej liscie!!';
+            echo 'Email na czarnej liscie!!<br />';
+         }
+      ?>
+      <?php
+         $samopoczucie = $_POST["samopoczucie"];
+         echo 'Twoje aktualne samopoczucie: ';
+         echo $samopoczucie;
+         echo '<br />';
+
+         if($samopoczucie==9){
+            echo 'Twoje samopoczucie pracując u nas byłoby takie samo! <br />';
+         }else if($samopoczucie<5 && $samopoczucie>0){
+             echo 'Twoje samopoczucie pracując u nas wynosiłoby: '.$samopoczucie*2 .'! <br />';
+             echo 'Już jutro twoje samopoczucie wyniosłoby: ';
+             echo $samopoczucie +1;
+             echo '! <br />';
+             echo 'A nie pracując u nas w niedługim czasie wyniesie: '.$samopoczucie/2 .'! <br />';
+             echo 'Decydując sie na niepracowanie u nas już jutro twoje samopoczucie wyniosłoby: ';
+             echo $samopoczucie -1;
+             echo '! <br />';
+         }else {
+            echo 'Twoje samopoczucie pracując u nas wynosiłoby: 9! <br />';
          }
       ?>
       <p>Phone: <?php print( $_POST["phone"] ); ?></p>

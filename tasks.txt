@@ -12,7 +12,7 @@ W skrypcie przetwarzającym dane z formularza należy pokazać umiejętność po
 następującymi elementami lub właściwościami języka PHP:
 • typowanie dynamiczne, konwersja typów, rzutowanie,
 • stałe,
-• operatory arytmetyczne, operatory przypisania, operatory porównania, pierwszeństwo
+• operatory przypisania, operatory porównania, pierwszeństwo
 operatorów,
 • tablice indeksowane numerycznie i tablice asocjacyjne,
 • funkcje count, reset, key, next,
@@ -24,9 +24,9 @@ odwrotnego ukośnika),
 
 ------------------
 zrobione:
- porównywanie łańcuchów (funkcje)
- for i foreach 
-
+• porównywanie łańcuchów (funkcje)
+• for i foreach 
+• operatory arytmetyczne,
 
 
  -------------
