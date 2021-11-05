@@ -15,13 +15,23 @@ następującymi elementami lub właściwościami języka PHP:
 • operatory arytmetyczne, operatory przypisania, operatory porównania, pierwszeństwo
 operatorów,
 • tablice indeksowane numerycznie i tablice asocjacyjne,
-• instrukcje sterujące for i foreach oraz funkcje count, reset, key, next,
+• funkcje count, reset, key, next,
 • wyrażenia regularne, funkcje preg_match, preg_replace,
-• porównywanie łańcuchów (operatory i funkcje), znaki specjalne w łańcuchach (rola
+• porównywanie łańcuchów (operatory), znaki specjalne w łańcuchach (rola
 odwrotnego ukośnika),
 • inne tablice superglobalne (np. ujawnianie w odpowiedzi serwera adresu IP klienta),
 • funkcja die.
-Zagadnienia, czyli o co prowadzący może zapytać?
+
+------------------
+zrobione:
+ porównywanie łańcuchów (funkcje)
+ for i foreach 
+
+
+
+ -------------
+
+ Zagadnienia, czyli o co prowadzący może zapytać?
 1. Stosowane znaczniki PHP, ich znaczenie oraz zakres ich działania.
 2. Rodzaje komentarzy w skryptach PHP.
 3. Rola pojedynczych i podwójnych znaków apostrofu oraz par apostrofów.
