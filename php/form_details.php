@@ -1,5 +1,6 @@
 <?php
-   define("DZIEKI", 'Dzieki za wypelnienie ankiety');
+   define("DZIEKI", 'Dzieki za wypelnienie formularza.');
+   $string690 = 'Czesc, '. $_POST["name"];
 ?>
 
 <!DOCTYPE html>
@@ -16,6 +17,7 @@
    </head>
    <body>
        <?php 
+         $string0=$GLOBALS['string690'];
          $string0 = 'Czesc, '. $_POST["name"];
          $string0.= '.<br />';
          $string0.= DZIEKI;
@@ -61,12 +63,17 @@
              echo 'Decydując sie na niepracowanie u nas już jutro twoje samopoczucie wyniosłoby: ';
              echo $samopoczucie -1;
              echo '! <br />';
-         }else {
+         }else if($samopoczucie>4&&$samopoczucie<10){
             $samopoczuciew = &$samopoczucie;
             $samopoczucie = 9;
             echo 'Twoje samopoczucie pracując u nas wynosiłoby: ';
             echo $samopoczuciew;
             echo '! <br />';
+         }else{
+            echo 'BŁEDNE DANE, USUWANIE DANYCH, LIKWIDACJA FORMULARZA, <span style="color:#ff0000"> AUTODESTRUKCJA</span><br /> ';
+            die();
+         
+
          }
       ?>
       <p>Numer telefonu: <?php print( $_POST["phone"] ); ?></p>

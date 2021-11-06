@@ -10,21 +10,22 @@ spełniają zadanych kryteriów, w odpowiedzi wysyłanej przez serwer do klienta
 stosowne komunikaty.
 W skrypcie przetwarzającym dane z formularza należy pokazać umiejętność posługiwania się
 następującymi elementami lub właściwościami języka PHP:
-• typowanie dynamiczne, konwersja typów, rzutowanie,
 
+• typowanie dynamiczne, konwersja typów, rzutowanie,
 • tablice indeksowane numerycznie i tablice asocjacyjne,
 • funkcje count, reset, key, next,
 • wyrażenia regularne, funkcje preg_match, preg_replace,
 • znaki specjalne w łańcuchach (rola odwrotnego ukośnika),
-• funkcja die.
-• inne tablice superglobalne (np. ujawnianie w odpowiedzi serwera adresu IP klienta) - mam pokazywanie IP ale nic wiecej
+
 ------------------
 zrobione:
 • stałe,
 • porównywanie łańcuchów (funkcje, operatory),
 • for i foreach 
 • operatory arytmetyczne, operatory przypisania, operatory porównania, pierwszeństwo operatorów(https://www.php.net/manual/en/language.operators.precedence.php)
-• inne tablice superglobalne (np. ujawnianie w odpowiedzi serwera adresu IP klienta) - mam pokazywanie IP ale nic wiecej
+• inne tablice superglobalne (np. ujawnianie w odpowiedzi serwera adresu IP klienta) - mam pokazywanie IP($_SERVER), $GLOBALS
+• funkcja die.
+
 
  -------------
 
