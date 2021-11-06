@@ -53,15 +53,8 @@
             <h3> Join our team!</h3>
             
             <form class="form-join-us" method = "post" action = "../php/form_personal.php">
-      
-               <input type = "hidden" name = "recipient"
-                  value = "#">
-               <input type = "hidden" name = "subject" 
-                  value = "Feedback Form">
-               <input type = "hidden" name = "redirect" 
-                  value = "#"> 
 
-               
+
                 <div class="separated">
                      <label>Name</label>
                      <input name = "name" type = "text" size = "25" id="form_name">
@@ -95,23 +88,23 @@
                      <strong>What roles do you take in SR soloq game:</strong><br>
    
                      <label>Top
-                        <input name = "roles" type = "checkbox"  id="form_role_top"
+                        <input name = "roles[]" type = "checkbox"  id="form_role_top"
                            value = "Top"></label>
                      
                      <label>Jungle
-                        <input name = "roles" type = "checkbox" id="form_role_jg"
+                        <input name = "roles[]" type = "checkbox" id="form_role_jg"
                            value = "Jungle"></label>
                            
                      <label>Mid
-                        <input name = "roles" type = "checkbox" id="form_role_mid"
+                        <input name = "roles[]" type = "checkbox" id="form_role_mid"
                            value = "Mid"></label>
                            
                      <label>Bot
-                     <input name = "roles" type = "checkbox" id="form_role_bot"
+                     <input name = "roles[]" type = "checkbox" id="form_role_bot"
                         value = "Bot"></label>
                         
                      <label>Supp
-                     <input name = "roles" type = "checkbox" id="form_role_supp"
+                     <input name = "roles[]" type = "checkbox" id="form_role_supp"
                         value = "Supp"></label>
                      </p>
                </div>
