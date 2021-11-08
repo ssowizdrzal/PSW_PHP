@@ -1,3 +1,11 @@
+<?php
+if(empty($fontColor)){
+  $fontColor = "3f3f3f";
+}
+if(empty($fontStyle)){
+  $fontStyle = "Times New Roman";
+}
+   ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,8 +25,10 @@
          feel free to explore.">
         <link rel="stylesheet" href="css/global.css">
         <script src="js/on_press.js"></script>
+
 </head>
-<body onkeydown="showChar(event);" >
+<body onkeydown="showChar(event);" style="background-color: #<?php echo $fontColor; ?>;  font-family: <?php echo $fontStyle; ?>; "><?php
+  ?>
     <header class="header">
         <div class="header-content">
             <img src="./img/lol-icon.png" alt="lol logo"> 
@@ -49,28 +59,6 @@
                 <img class="obraz-2" src="img/lol400-2.jpg" alt="image lol 2 " />
             </div>
         </section>
-        <!-- <section class="routes">
-            <h2 "><b>Routes to other sites</b></h2>
-            <details class="click-dropdown-area">
-                <summary class="click-dropdown-header">
-                    CSS Task 1 routes 
-                </summary>
-                <ol class="click-dropdown-list">
-                    <li class="click-dropdown-list-item">
-                        <a href="./html/csshtml/akapity.html"> Akapity</a>
-                    </li>
-                    <li class="click-dropdown-list-item">
-                        <a href="./html/csshtml/list.html"> List</a>
-                    </li>
-                    <li class="click-dropdown-list-item">
-                        <a href="./html/csshtml/positions.html"> Positions</a>
-                    </li>
-                    <li class="click-dropdown-list-item">
-                        <a href="./html/csshtml/dropdown.html"> DropDown</a>
-                    </li>
-                </ol>
-            </details>
-        </section> -->
     
         <section class="blog-posts">
             <h2 id="top-header" ><b>Recent News</b></h2>
@@ -176,7 +164,37 @@
                     He deserves more credit. He may not be the brightest spark, but he was something we should all strive for—the will to never falter.
                 </p>
             </article>
+        
+        <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">  
+        <input type = "submit" value = "styl1" name="mybutton">
+        <input type = "submit" value = "styl2" name="mybutton">
+        <input type = "submit" value = "styl3" name="mybutton">
+        </form>
+        
+        <?php 
+        
+        echo $fontColor . ' ' .$fontStyle;
+            if(isset($_POST["mybutton"])){
+                if($_POST["mybutton"]=="styl1"){
+                    $fontColor="000000";
+                    $fontStyle="Times New Roman";
 
+                }
+                if($_POST["mybutton"]=="styl2"){
+                    $fontColor="3f3f3f";
+                    $fontStyle = "Arial";
+                }
+                if($_POST["mybutton"]=="styl3"){
+                    $fontColor="FF0000";
+                    $fontStyle = "Verdana";
+
+                }
+            }
+            echo $fontColor . ' ' .$fontStyle;
+
+
+      ?>
+            <p>Click <a href = "php/checkcookies.php">here</a>to read the saved cookie.</p>
         </section>
         <script src="js/przycisk.js"></script>
         
@@ -184,43 +202,15 @@
         <p class="go-to-top">Go to the
             <a href="#top-header">top</a>.
         </p>
-        
+     
     </main>
     <footer class="footer">
         <p>Autor: Dominik Sandura, Sebastian Sowizdrzał</p>
         <a href="mailto:242405@student.pwr.edu.pl">242405@student.pwr.edu.pl</a> - <a href="mailto:242467@student.pwr.edu.pl">242467@student.pwr.edu.pl</a>
-        <div class="settings-footer">
-            <div class="inner-settings">
-                <p>Background color</p>
-                <input type="text" list="background_colors" name="choose_color" />
-                    <datalist id="background_colors">
-                    <option value="#F0F8FF">AliceBlue</option>
-                    <option value="#F0FFFF">Azure</option>
-                    <option value="#FFF8DC">Cornsilk</option>
-                    <option value="#FFFAF0">FloralWhite</option>
-                    <option value="#eaecf0">Default</option>
-                </datalist>
-            </div>
-            <div class="inner-settings">
-                <p>Font color</p>
-                <input type="text" list="font_colors" name="choose_font" />
-                    <datalist id="font_colors">
-                    <option value="#FFF8DC">Cornsilk</option>
-                    <option value="#1e2227">Alt Color</option>
-                    <option value="#000000">Default</option>
-                </datalist>
-            </div>
-            <div class="inner-settings">
-                <p>Font styles</p>
-                <input type="text" list="font_styles" name="font_style" />
-                    <datalist id="font_styles">
-                    <option value="Impact,Charcoal,sans-serif">Impact</option>
-                    <option value="Gill Sans Extrabold, Helvetica, sans-serif">Gill Sans Extrabold</option>
-                    <option value="Merriweather, serif">Default</option>
-                </datalist>
-                
-            </div>
-            <script src="js/change_css.js"></script>
+        
+
+    
+
         </div>
     </footer> 
 </body>
