@@ -117,89 +117,6 @@ img.logo {
    
 }
 
-.global-nav {
-    margin-left: auto; 
-    margin-right: 1%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-nav.global-nav ul {
-
-list-style-type: none;
-
-}
-
-
-nav.global-nav ul a{
-    color: inherit;
-    text-decoration: underline;
-    padding: 0;
-    margin-left: 0;
-    border-style: none;
-    background-color: inherit;
-    border-width: 0;
-    border-radius: 0;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    -ms-border-radius: 0;
-    -o-border-radius: 0;
-}
-
-nav.global-nav ul a:hover{
-    background-color: transparent;
-    border-radius: 0;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    -ms-border-radius: 0;
-    -o-border-radius: 0;
-}
-/* full screen desktop */
-@media only screen and (min-width: 1200px){
-
-    nav.global-nav ul a{
-        color: inherit;
-        text-decoration: none;
-        padding: 5px 10px 5px 10px;
-        margin-left: 5px;
-        border-color: #000000;
-        border-style: solid;
-        background-color: var(--main-color);
-        border-width: thin;
-        border-radius: 12px;
-        -webkit-border-radius: 12px;
-        -moz-border-radius: 12px;
-        -ms-border-radius: 12px;
-        -o-border-radius: 12px;
-        }
-    
-    nav.global-nav ul a:hover{
-        color:black;
-        background-color: yellow;
-        border-radius: 12px;
-        -webkit-border-radius: 12px;
-        -moz-border-radius: 12px;
-        -ms-border-radius: 12px;
-        -o-border-radius: 12px;
-    }
-
-    nav.global-nav ul {
-        display: inline-block;
-        margin: 0;
-        padding: 0;
-        /* For IE, the outcast */
-        zoom:1;
-        *display: inline;
-    }
-
-    nav.global-nav ul >li {
-        float: left;
-        padding: 2px 5px;
-    }
-}
-
 /* addition */
 
 .click-dropdown-area {
@@ -343,4 +260,180 @@ header img{
     width: 1000px;
     background: grey;
 }
+.dropdown-login:hover .dropdown-login-content {
+    display: block;
+}
+
+.global-nav {
+    margin-left: auto; 
+    margin-right: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+nav.global-nav ul {
+
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+nav.global-nav ul a{
+    color: inherit;
+    text-decoration: underline;
+    padding: 0;
+    margin-left: 0;
+    border-style: none;
+    background-color: inherit;
+    border-width: 0;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+}
+
+nav.global-nav ul a:hover{
+    background-color: transparent;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+}
+/* full screen desktop */
+@media only screen and (min-width: 1200px){
+
+    nav.global-nav ul a{
+        color: inherit;
+        text-decoration: none;
+        padding: 5px 10px 5px 10px;
+        margin-left: 5px;
+        border-color: #000000;
+        border-style: solid;
+        background-color: var(--main-color);
+        border-width: thin;
+        border-radius: 12px;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        -ms-border-radius: 12px;
+        -o-border-radius: 12px;
+        }
+    
+    nav.global-nav ul a:hover{
+        color:black;
+        background-color: yellow;
+        border-radius: 12px;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        -ms-border-radius: 12px;
+        -o-border-radius: 12px;
+    }
+
+    nav.global-nav ul {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        /* For IE, the outcast */
+        zoom:1;
+        *display: inline;
+    }
+
+    nav.global-nav ul >li {
+        float: left;
+        padding: 2px 5px;
+    }
+    nav.global-nav span {
+        padding: 5px 10px 5px 10px;
+        border-color: #000000;
+        border-style: solid;
+        background-color: var(--main-color);
+        border-width: thin;
+        border-radius: 12px;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        -ms-border-radius: 12px;
+        -o-border-radius: 12px;
+    }
+    
+    
+    nav.global-nav ul span:hover{
+        color:black;
+        background-color: yellow;
+        border-radius: 12px;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        -ms-border-radius: 12px;
+        -o-border-radius: 12px;
+    }
+}
+
+
+
+nav.global-nav button, nav.global-nav input[type="submit"], nav.global-nav input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
   
+  /* Modal Content */
+  .modal-content > span {
+    text-align: right;
+  }
+
+  .modal-content {
+    position: fixed; 
+    left: 50%;
+    top: 20%;
+    color: black;
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: center;
+    max-width: fit-content;
+    max-height: fit-content;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
