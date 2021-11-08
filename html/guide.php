@@ -21,7 +21,8 @@
             <h1 class="greeting" > &#x2661; Welcome  </h1>
     
            <!--Navigation bar-->
-           <nav class="global-nav">
+           <?php include(realpath($_SERVER["DOCUMENT_ROOT"]).'\PSW_PHP\php\navbar.php'); ?>
+           <!-- <nav class="global-nav">
             <ul>
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../html/worlds.html">Worlds</a></li>
@@ -29,7 +30,7 @@
                 <li><a href="../html/forms.html">Forms</a></li>
                 <li><a href="../html/guide.html">Guide</a></li>
             </ul>
-        </nav>
+        </nav> -->
         <!--end of Navigation bar-->
         </div>
          

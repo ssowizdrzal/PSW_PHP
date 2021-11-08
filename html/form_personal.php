@@ -19,9 +19,9 @@
         <div class="header-content">
          <img src="../img/lol-icon.png" alt="lol logo"> 
          <h1>Form personal info</h1>
-    
+         <?php include(realpath($_SERVER["DOCUMENT_ROOT"]).'\PSW_PHP\php\navbar.php'); ?>
            <!--Navigation bar-->
-           <nav class="global-nav">
+           <!-- <nav class="global-nav">
                 <ul>
                   <li><a href="../index.html">Home</a></li>
                   <li><a href="../html/worlds.html">Worlds</a></li>
@@ -31,7 +31,7 @@
 
                 </ul>
             </nav>
-         
+          -->
                 <!--end of Navigation bar-->
         </div>
 

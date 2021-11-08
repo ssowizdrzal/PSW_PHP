@@ -25,9 +25,9 @@
                 </div>
             </div>
             <h1 > </h1>
-            
+            <?php include(realpath($_SERVER["DOCUMENT_ROOT"]).'\PSW_PHP\php\navbar.php'); ?>
            <!--Navigation bar-->
-           <nav class="global-nav">
+           <!-- <nav class="global-nav">
                 <ul>
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="../html/worlds.html">Worlds</a></li>
@@ -35,7 +35,7 @@
                     <li><a href="../html/forms.html">Forms</a></li>
                     <li><a href="../html/guide.html">Guide</a></li>
                 </ul>
-            </nav>
+            </nav> -->
             <!--end of Navigation bar-->
         </div>
          
@@ -80,9 +80,9 @@
 
         <p>Spoilery odnośnie najnowszego odcinka Lol series sezon 3!</p>
 
-        <button id="myBtn">Pokaż spoiler</button>
+        <!-- <button id="myBtn">Pokaż spoiler</button>
         <script src="../js/przycisktajemnawiadomosc.js"></script>
-       
+        -->
         <p id="demo"></p>
         <br>
         <button onclick="zmiennaczerwonetlo()">zmiennaczerwonetlo</button>

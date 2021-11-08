@@ -1,3 +1,23 @@
+<?php
+
+
+session_start();
+// Check user login or not
+if(isset($_SESSION['uname'])){
+   echo $_SESSION['uname'];
+}
+else{
+    echo "no user" ;
+}
+
+if(empty($fontColor)){
+  $fontColor = "3f3f3f";
+}
+if(empty($fontStyle)){
+  $fontStyle = "Times New Roman";
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,9 +42,9 @@
 
             </div>
             <h1>Worlds 2021 Play-In</h1>
-    
+            <?php include(realpath($_SERVER["DOCUMENT_ROOT"]).'\PSW_PHP\php\navbar.php'); ?>
            <!--Navigation bar-->
-           <nav class="global-nav">
+           <!-- <nav class="global-nav">
                 <ul>
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="../html/worlds.html">Worlds</a></li>
@@ -33,7 +53,7 @@
                     <li><a href="../html/guide.html">Guide</a></li>
                 </ul>
             </nav>
-         
+          -->
                 <!--end of Navigation bar-->
         </div>
          

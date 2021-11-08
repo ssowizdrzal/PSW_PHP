@@ -44,7 +44,7 @@ if(empty($fontStyle)){
         <div class="header-content">
             <img src="./img/lol-icon.png" alt="lol logo"> 
             <h1 class="greeting" > &#x2661; Welcome,  </h1>
-            <?php echo  "x" ?>
+            <?php include(realpath($_SERVER["DOCUMENT_ROOT"]).'\PSW_PHP\php\navbar.php'); ?>
             <script src="js/welcome.js"></script>
         </div>
          
