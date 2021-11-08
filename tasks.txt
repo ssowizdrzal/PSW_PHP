@@ -1,3 +1,5 @@
+COMPLETED 
+
 Do witryny, która jest rozwijana od początku semestru należy doprogramować w języku PHP
 dynamikę po stronie serwera.
 Najlepiej uczynić to wprowadzając formularze po stronie klienta, z których dane przetwarzane będą
