@@ -1,120 +1,42 @@
-Do witryny, która jest rozwijana od początku semestru należy doprogramować w języku PHP
-dynamikę po stronie serwera.
-Najlepiej uczynić to wprowadzając formularze po stronie klienta, z których dane przetwarzane będą
-przez skrypty po stronie serwera. Formularze powinny zawierać: pola tekstowe, pola jednokrotnego
-wyboru, pola wielokrotnego wyboru i rozwijane listy. Mogą być też zastosowane dane ukryte.
-Dane z formularzy powinny być przesyłane na serwer metodą POST. Dostęp do nich powinien być
-realizowany przez tablicę superglobalną $_POST. Do sprawdzenia ich poprawności powinny być
-wykorzystane wyrażenia regularne. W przypadku podania przez użytkownika danych, które nie
-spełniają zadanych kryteriów, w odpowiedzi wysyłanej przez serwer do klienta powinny pojawiać się
-stosowne komunikaty.
-W skrypcie przetwarzającym dane z formularza należy pokazać umiejętność posługiwania się
-następującymi elementami lub właściwościami języka PHP:
+Pamiętanie preferencji w ciastkach
+
+Witrynę należy wyposażyć w mechanizm umożliwiający zmianę i zapamiętanie jej wyglądu (krój i
+kolor czcionki, kolor tła itp.). Można np. przygotować kilka garniturów stylów, które użytkownik
+będzie mógł wybierać w zależności od swoich preferencji. Preferencje użytkownika serwer ma
+przechowywać w ciastku. Na podstawie zapisanych w ciastku danych, serwer ma odpowiednio
+modyfikować strony witryny i przesyłać je do przeglądarki. Warto spreparować osobną stronę
+„diagnostyczną”, która będzie ujawniała zawartość ciastka.
+Należy skorzystać z następujących elementów języka PHP:
+
+• funkcja setcookie() – inicjuje ciastko,
+• funkcja time() – podaje aktualny znacznik czasu (przydaje się do wyznaczani terminu
+ważności ciastka),
+• tablica $_COOKIE – przechowuje wartości ciastek.
 
 
+Śledzenie sesji
+Proszę zdecydować, które strony witryny będą dostępne publicznie, a które tylko po uwierzytelnieniu
+(po zalogowaniu za pośrednictwem loginu i hasła). Do zapamiętania faktu uwierzytelnienia należy
+wykorzystać mechanizm sesji. Identyfikator sesji serwer ma przechowywać w ciastku. Warto
+spreparować osobną stronę „diagnostyczną”, która będzie ujawniała zawartość ciastka. Podczas
+procedury logowania, dane na serwer powinny być przekazywane metodą POST. Strony witryny
+dostępne po uwierzytelnieniu powinny ujawniać login użytkownika. Loginy i hasła należy zainicjować
+w zmiennych tablicowych, a nie w bazie danych.
 
-------------------
-zrobione:
-• typowanie dynamiczne, konwersja typów, rzutowanie,stałe,
-• tablice indeksowane numerycznie  i tablice asocjacyjne,
-• funkcje reset, key, next, count,
-• porównywanie łańcuchów (funkcje, operatory),
-• for i foreach 
-• operatory arytmetyczne, operatory przypisania, operatory porównania, pierwszeństwo operatorów(https://www.php.net/manual/en/language.operators.precedence.php)
-• inne tablice superglobalne (np. ujawnianie w odpowiedzi serwera adresu IP klienta) - mam pokazywanie IP($_SERVER), $GLOBALS
-• funkcja die.
-• znaki specjalne w łańcuchach (rola odwrotnego ukośnika),
-    @#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%
-    \a
-    alarm, that is, the BEL character (hex 07)
-    \cx
-    "control-x", where x is any character
-    \e
-    escape (hex 1B)
-    \f
-    formfeed (hex 0C)
-    \n
-    newline (hex 0A)
-    \p{xx}
-    a character with the xx property, see unicode properties for more info
-    \P{xx}
-    a character without the xx property, see unicode properties for more info
-    \r
-    carriage return (hex 0D)
-    \R
-    line break: matches \n, \r and \r\n
-    \t
-    tab (hex 09)
-    \xhh
-    character with hex code hh
-    \ddd
-    character with octal code ddd, or backreference
-    @#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%
+Należy skorzystać z następujących elementów języka PHP:
 
-• wyrażenia regularne, funkcje preg_match, preg_replace,
-    https://www.php.net/manual/en/function.preg-match.php
-    The following should be escaped if you are trying to match that character
+• funkcja session_start() – inicjuje mechanizm sesji,
+• tablica $_SESSION – przechowuje wartości zmiennych sesji,
+• funkcja isset($_SESSION[’zmienna’]) – sprawdza status zmiennej sesji.
 
-    \ ^ . $ | ( ) [ ]
-    * + ? { } ,
+Uwaga: Nie ma obowiązku implementowania mechanizmów ochrony przed przejęciem sesji itp.
+Zadanie ma na celu jedynie zilustrowanie działania sesji w PHP.
 
-    Special Character Definitions
-    \ Quote the next metacharacter
-    ^ Match the beginning of the line
-    . Match any character (except newline)
-    $ Match the end of the line (or before newline at the end)
-    | Alternation
-    () Grouping
-    [] Character class
-    * Match 0 or more times
-    + Match 1 or more times
-    ? Match 1 or 0 times
-    {n} Match exactly n times
-    {n,} Match at least n times
-    {n,m} Match at least n but not more than m times
-    More Special Character Stuff
-    \t tab (HT, TAB)
-    \n newline (LF, NL)
-    \r return (CR)
-    \f form feed (FF)
-    \a alarm (bell) (BEL)
-    \e escape (think troff) (ESC)
-    \033 octal char (think of a PDP-11)
-    \x1B hex char
-    \c[ control char
-    \l lowercase next char (think vi)
-    \u uppercase next char (think vi)
-    \L lowercase till \E (think vi)
-    \U uppercase till \E (think vi)
-    \E end case modification (think vi)
-    \Q quote (disable) pattern metacharacters till \E
-    Even More Special Characters
-    \w Match a "word" character (alphanumeric plus "_")
-    \W Match a non-word character
-    \s Match a whitespace character
-    \S Match a non-whitespace character
-    \d Match a digit character
-    \D Match a non-digit character
-    \b Match a word boundary
-    \B Match a non-(word boundary)
-    \A Match only at beginning of string
-    \Z Match only at end of string, or before newline at the end
-    \z Match only at end of string
-    \G Match only where previous m//g left off (works only with /g)
- -------------
 
- Zagadnienia, czyli o co prowadzący może zapytać?
-1. Stosowane znaczniki PHP, ich znaczenie oraz zakres ich działania.
-2. Rodzaje komentarzy w skryptach PHP.
-3. Rola pojedynczych i podwójnych znaków apostrofu oraz par apostrofów.
-4. Jak deklaruje się i inicjuje zmienne? Czy wielkie i małe litery w nazwie zmiennej są rozróżniane?
-Jakie są typy zmiennych?
-5. Realizacja operacji arytmetycznych.
-6. Na czym polega konwersja typów danych i rzutowanie (casting) zmiennych?
-7. Sposoby inicjowania i indeksowanie tablic (również tablice asocjacyjne).
-8. Sposoby „przeglądania” tablic i funkcje wspomagające te działania.
-9. Jakich kontrolek używa się do wprowadzania danych do formularza? Kiedy, które stosować?
-10. Która kontrolka formularza wyzwala zdarzenie wysłania danych? Jak określa się metodę
-wysyłania danych z formularza?
-11. Jaka jest konstrukcja tablic superglobalnych, w szczególności $_POST?
-12. Jak realizuje się walidację danych z formularza?
+Zagadnienia, czyli o co prowadzący może zapytać
+1. Opisz sekwencję wymiany wiadomości, gdy klient i serwer korzystają z ciastek. W którym miejscu
+wiadomości HTTP przesyłane są ciastka?
+2. Omów działanie funkcji setcookie().
+3. Zastanów się nad funkcjonalnością stron w przypadku wyłączenia zapisu ciastek w przeglądarce.
+Czy jest jakieś alternatywne rozwiązanie?
+4. Opisz zasadę działania mechanizmu sesji. Omów działanie funkcji session_start().
