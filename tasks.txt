@@ -1,43 +1,47 @@
-Pamiętanie preferencji w ciastkach
+Proszę wyposażyć rozwijaną od początku semestru witrynę w możliwość rejestrowania i edytowania
+danych osobowych użytkowników. Zarejestrowani użytkownicy będą mogli korzystać z części witryny
+dostępnej po uwierzytelnieniu (po zalogowaniu za pośrednictwem loginu i hasła). Dane
+zarejestrowanych użytkowników oraz loginy i hasła mają być przechowywane w bazie danych.
+Rejestracja i edycja danych osobowych ma być zrealizowana przy pomocy jednego skryptu. Skrypt
+powinien wykrywać, czy jest to rejestracja nowego użytkownika, czy wpisane dane są poprawne
+(walidacja na podstawie wyrażeń regularnych) i jeśli tak, zapisać je do bazy oraz wyświetlić stosowny
+komunikat. Innymi słowy, skrypt w zależności od kontekstu powinien generować formularz (pusty lub
+wypełniony) lub dokonywać zapisu danych do bazy (patrz rozdz. 19.11)
+Do zapamiętania faktu uwierzytelnienia należy wykorzystać mechanizm sesji. Identyfikator sesji
+serwer ma przechowywać w ciastku. Wysyłanie danych z formularzy na serwer powinno zawsze
+odbywać się metodą POST. Strony witryny dostępne po uwierzytelnieniu powinny ujawniać login
+użytkownika.
+Proszę spreparować osobny skrypt „diagnostyczny”, który będzie ujawniał zawartość bazy danych
+oraz umożliwiał filtrowanie wierszy po zadanych polach.
 
-Witrynę należy wyposażyć w mechanizm umożliwiający zmianę i zapamiętanie jej wyglądu (krój i
-kolor czcionki, kolor tła itp.). Można np. przygotować kilka garniturów stylów, które użytkownik
-będzie mógł wybierać w zależności od swoich preferencji. Preferencje użytkownika serwer ma
-przechowywać w ciastku. Na podstawie zapisanych w ciastku danych, serwer ma odpowiednio
-modyfikować strony witryny i przesyłać je do przeglądarki. Warto spreparować osobną stronę
-„diagnostyczną”, która będzie ujawniała zawartość ciastka.
-Należy skorzystać z następujących elementów języka PHP:
+Należy skorzystać z następujących elementów języka PHP*:
+• mysqli_connect(),
+• mysqli_query(),
+• mysqli_fetch_row(),
+• mysqli_error(),
+• mysqli_close();
+• quotemeta(),
+• die(),
+• zmienna nazwa zmiennej ($$zmienna).
 
-• funkcja setcookie() – inicjuje ciastko,
-• funkcja time() – podaje aktualny znacznik czasu (przydaje się do wyznaczani terminu
-ważności ciastka),
-• tablica $_COOKIE – przechowuje wartości ciastek.
+TASKS:
+    0.0 db_up.php - zakłada bazę danych, tworzy tabele i wypełnia bazę danymi
+    0.1 db_down.php - usuwa bazę danych
+    0.2 zrobienie connect z baza danych
+    1. Zrobienie Modala na rejestruj/edytuj profil (edynamiczny formularz)
+    2. zrobienie rejestracji (php) 
+    2. zrobienie logowania z polaczeniem z baza danych
+ 
+
 
 Zagadnienia, czyli o co prowadzący może zapytać
-1. Opisz sekwencję wymiany wiadomości, gdy klient i serwer korzystają z ciastek. W którym miejscu
-wiadomości HTTP przesyłane są ciastka?
-2. Omów działanie funkcji setcookie().
-3. Zastanów się nad funkcjonalnością stron w przypadku wyłączenia zapisu ciastek w przeglądarce.
-Czy jest jakieś alternatywne rozwiązanie?
-4. Opisz zasadę działania mechanizmu sesji. Omów działanie funkcji session_start().
-
-------------------------------------------------------------------------------------------------------------
-
-Śledzenie sesji
-Proszę zdecydować, które strony witryny będą dostępne publicznie, a które tylko po uwierzytelnieniu
-(po zalogowaniu za pośrednictwem loginu i hasła). Do zapamiętania faktu uwierzytelnienia należy
-wykorzystać mechanizm sesji. Identyfikator sesji serwer ma przechowywać w ciastku. Warto
-spreparować osobną stronę „diagnostyczną”, która będzie ujawniała zawartość ciastka. Podczas
-procedury logowania, dane na serwer powinny być przekazywane metodą POST. Strony witryny
-dostępne po uwierzytelnieniu powinny ujawniać login użytkownika. Loginy i hasła należy zainicjować
-w zmiennych tablicowych, a nie w bazie danych.
-
-Należy skorzystać z następujących elementów języka PHP:
-
-• funkcja session_start() – inicjuje mechanizm sesji,
-• tablica $_SESSION – przechowuje wartości zmiennych sesji,
-• funkcja isset($_SESSION[’zmienna’]) – sprawdza status zmiennej sesji.
-
-Uwaga: Nie ma obowiązku implementowania mechanizmów ochrony przed przejęciem sesji itp.
-Zadanie ma na celu jedynie zilustrowanie działania sesji w PHP.
-
+1. Omów funkcje realizujące dostęp i operacje na bazie i tablicy danych. Co określa format
+otrzymanych danych?
+2. Jak realizuje się obsługę błędów dla funkcji operacji na bazie danych?
+3. Jak należy postępować ze znakami specjalnymi PHP (takimi jak np. nawiasy w numerze telefonu)
+przy formułowaniu zapytań SQL?
+4. Omów mechanizm tworzenia formularza z już wprowadzonymi danymi.
+* W odróżnieniu od podręcznika, należy zastosować MySQLi – ulepszone (ang. improved) rozszerzenie języka
+PHP do obsługi bazy danych MySQL. Moduł ten został wprowadzony w PHP5 i pozwala na używanie bazy za
+pomocą obiektowej składni. Poza tym obsługuje mechanizm transakcji, poprawia bezpieczeństwo i
+wydajność.
