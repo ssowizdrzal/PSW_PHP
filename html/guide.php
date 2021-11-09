@@ -1,12 +1,19 @@
 <?php
 require(realpath($_SERVER["DOCUMENT_ROOT"]).'\PSW_PHP\php\functions.php');
 
+foreach ($_COOKIE as $key => $value )
+print( "<p>$key: $value</p>" );
 
 ?>
 
 <?php
+
+foreach ($_COOKIE as $key => $value )
+            print( "<p>$key: $value</p>" );
+            var_dump($_COOKIE);
+
     if(isset($_POST["mybutton"])){
-        setcookie("styl",$_POST["mybutton"], time() + (86400 * 30));
+        setcookie("styl",$_POST["mybutton"], time() + (86400 * 30), "/");
             
         echo "<meta http-equiv='refresh' content='0'>";
     }

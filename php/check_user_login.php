@@ -2,7 +2,8 @@
 
 $user = array(
     "sebastian" => "haslo12345",
-    "dominik" => "domi12345"
+    "dominik" => "domi12345",
+    "admin" => "admin"
 );
 
 $uname = $_POST['username'];

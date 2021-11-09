@@ -2,16 +2,27 @@
 
 require(realpath($_SERVER["DOCUMENT_ROOT"]).'\PSW_PHP\php\functions.php');
 
-
+// Check user login or not
+if(isset($_SESSION['uname'])){
+   echo $_SESSION['uname'];
+}
+else{
+    echo "no user" ;
+}
 ?>
 
 <?php
-    
+        foreach ($_COOKIE as $key => $value )
+        print( "<p>$key: $value</p>" );
+        var_dump($_COOKIE);
+
         if(isset($_POST["mybutton"])){
-            setcookie("styl",$_POST["mybutton"], time() + (86400 * 30));
+            setcookie("styl",$_POST["mybutton"], time() + (86400 * 30), "/");
             
             echo "<meta http-equiv='refresh' content='0'>";
-        }
+
+            
+        } 
 ?>
 
 <!DOCTYPE html>
@@ -172,10 +183,10 @@ require(realpath($_SERVER["DOCUMENT_ROOT"]).'\PSW_PHP\php\functions.php');
         </p>
      
     </main>
-    <!--Footer bar-->
-    <footer class="footer" >
+    <footer class="footer">
         <p>Autor: Dominik Sandura, Sebastian Sowizdrzał</p>
-        <p><a href="mailto:242405@student.pwr.edu.pl">242405@student.pwr.edu.pl</a></p> <p><a href="mailto:242467@student.pwr.edu.pl">242467@student.pwr.edu.pl</a></p>
+        <a href="mailto:242405@student.pwr.edu.pl">242405@student.pwr.edu.pl</a> - <a href="mailto:242467@student.pwr.edu.pl">242467@student.pwr.edu.pl</a>
+        
         <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">  
         <input type = "submit" value = "styl1" name="mybutton">
         <input type = "submit" value = "styl2" name="mybutton">
@@ -185,8 +196,8 @@ require(realpath($_SERVER["DOCUMENT_ROOT"]).'\PSW_PHP\php\functions.php');
         <p>Click <a href = "/PSW_PHP/php/checkcookies.php">here</a>to read the saved cookie.</p>
         <?php 
         if(!isset($_SESSION['uname']))
-        include(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PHP_SELF'])) .'\php\login_modal.php'); ?>   
+        include(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PHP_SELF'])) .'\php\login_modal.php'); ?>    
+
     </footer> 
-    <!--end of Footer bar-->
 </body>
 </html>
