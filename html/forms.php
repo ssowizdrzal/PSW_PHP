@@ -1,7 +1,7 @@
 <?php
 require(realpath($_SERVER["DOCUMENT_ROOT"]).'\PSW_PHP\php\functions.php');
 
-session_start();
+
 // Check user login or not
 if(isset($_SESSION['uname'])){
    echo $_SESSION['uname'];
@@ -48,8 +48,8 @@ else{
         <nav class="interior-nav">
          <ul>
              <li><a href="./forms.html">Form Main</a></li>
-             <li><a href="./form_personal.html">Personal</a></li>
-             <li><a href="./form_personal_details.html">Personal Details</a></li>
+             <li><a href="./form_personal.php">Personal</a></li>
+             <li><a href="./form_personal_details.php">Personal Details</a></li>
          </ul>
      </nav>
 
@@ -207,6 +207,9 @@ else{
    <footer class="footer">
       <p>Autor: Dominik Sandura, Sebastian Sowizdrzał</p>
       <a href="mailto:242405@student.pwr.edu.pl">242405@student.pwr.edu.pl</a> - <a href="mailto:242467@student.pwr.edu.pl">242467@student.pwr.edu.pl</a>
+      <?php 
+        if(!isset($_SESSION['uname']))
+        include(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PHP_SELF'])) .'\php\login_modal.php'); ?>   
     </footer> 
 
 </body>
