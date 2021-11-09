@@ -36,7 +36,9 @@ else{
          League of Legends. W will touch multiple basic topics,
          feel free to explore.">
         <link rel="stylesheet" href="css/global.css">
+        
         <script src="js/on_press.js"></script>
+
 
 </head>
 <body onkeydown="showChar(event);" style="background-color: #<?php echo $fontColor; ?>;  font-family: <?php echo $fontStyle; ?>; "><?php
