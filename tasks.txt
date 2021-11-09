@@ -13,6 +13,15 @@ Należy skorzystać z następujących elementów języka PHP:
 ważności ciastka),
 • tablica $_COOKIE – przechowuje wartości ciastek.
 
+Zagadnienia, czyli o co prowadzący może zapytać
+1. Opisz sekwencję wymiany wiadomości, gdy klient i serwer korzystają z ciastek. W którym miejscu
+wiadomości HTTP przesyłane są ciastka?
+2. Omów działanie funkcji setcookie().
+3. Zastanów się nad funkcjonalnością stron w przypadku wyłączenia zapisu ciastek w przeglądarce.
+Czy jest jakieś alternatywne rozwiązanie?
+4. Opisz zasadę działania mechanizmu sesji. Omów działanie funkcji session_start().
+
+------------------------------------------------------------------------------------------------------------
 
 Śledzenie sesji
 Proszę zdecydować, które strony witryny będą dostępne publicznie, a które tylko po uwierzytelnieniu
@@ -32,11 +41,3 @@ Należy skorzystać z następujących elementów języka PHP:
 Uwaga: Nie ma obowiązku implementowania mechanizmów ochrony przed przejęciem sesji itp.
 Zadanie ma na celu jedynie zilustrowanie działania sesji w PHP.
 
-
-Zagadnienia, czyli o co prowadzący może zapytać
-1. Opisz sekwencję wymiany wiadomości, gdy klient i serwer korzystają z ciastek. W którym miejscu
-wiadomości HTTP przesyłane są ciastka?
-2. Omów działanie funkcji setcookie().
-3. Zastanów się nad funkcjonalnością stron w przypadku wyłączenia zapisu ciastek w przeglądarce.
-Czy jest jakieś alternatywne rozwiązanie?
-4. Opisz zasadę działania mechanizmu sesji. Omów działanie funkcji session_start().
