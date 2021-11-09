@@ -1,5 +1,7 @@
 <?php
 
+require(realpath($_SERVER["DOCUMENT_ROOT"]).'\PSW_PHP\php\functions.php');
+
 session_start();
 // Check user login or not
 if(isset($_SESSION['uname'])){
@@ -9,12 +11,12 @@ else{
     echo "no user" ;
 }
 
-if(empty($fontColor)){
-  $fontColor = "3f3f3f";
-}
-if(empty($fontStyle)){
-  $fontStyle = "Times New Roman";
-}
+// if(empty($fontColor)){
+//   $fontColor = "3f3f3f";
+// }
+// if(empty($fontStyle)){
+//   $fontStyle = "Times New Roman";
+// }
 
 ?>
 <!DOCTYPE html>
@@ -44,8 +46,8 @@ if(empty($fontStyle)){
         <div class="header-content">
             <img src="./img/lol-icon.png" alt="lol logo"> 
             <h1 class="greeting" > &#x2661; Welcome,  </h1>
-            <?php include(realpath($_SERVER["DOCUMENT_ROOT"]).'\PSW_PHP\php\navbar.php'); ?>
-            <script src="js/welcome.js"></script>
+            <?php include(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PHP_SELF'])) . '\php\navbar.php'); ?>
+          <script src="js/welcome.js"></script>
         </div>
          
         <hr class="global-hr">  
@@ -208,92 +210,8 @@ if(empty($fontStyle)){
         <a href="mailto:242405@student.pwr.edu.pl">242405@student.pwr.edu.pl</a> - <a href="mailto:242467@student.pwr.edu.pl">242467@student.pwr.edu.pl</a>
         
 
-    
+        <?php include(realpath($_SERVER["DOCUMENT_ROOT"]).'\PSW_PHP\php\login_modal.php'); ?>    
 
-        </div>
-                <!--Modal-->
-            <div id="myModal" class="modal">
-
-                <!-- Modal content -->
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <form class="login-form">
-                        <label >Login: <label><br>
-                        <input type="text" id="us_login" name="us_login" placeholder="login"><br>
-                        <label >Password: <label><br>
-                        <input type="password" id="us_pass" name="us_pass" placeholder="password"><br>
-                        <input type="button" value="Submit" name="but_submit" id="but_submit" />
-                        <div id="message"></div>
-                    </form>
-                </div>
-                
-                </div>
-                
-                <script>
-                // Get the modal
-                var modal = document.getElementById("myModal");
-                console.log(modal);
-                // Get the button that opens the modal
-                var btn = document.getElementById("myBtn");
-                console.log(btn);
-                // Get the <span> element that closes the modal
-                var span = document.getElementsByClassName("close")[0];
-                console.log(span);
-                // When the user clicks the button, open the modal 
-                btn.onclick = function() {
-                modal.style.display = "block";
-                }
-                
-                // When the user clicks on <span> (x), close the modal
-                span.onclick = function() {
-                modal.style.display = "none";
-                }
-                
-                // When the user clicks anywhere outside of the modal, close it
-                window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-                }
-                </script>
-
-                <script src="jquery-3.2.1.min.js" type="text/javascript"></script>
-
-                <script type="text/javascript">
-                    $(document).ready(function(){
-
-                        $("#but_submit").click(function(){
-                            var username = $("#us_login").val().trim();
-                            var password = $("#us_pass").val().trim();
-
-                            if( username != "" && password != "" ){
-                                console.log(username);
-                                console.log(password);
-                                $.ajax({
-                                    url:'./php/check_user_login.php',
-                                    type:'post',
-                                    data:{username:username,password:password},
-                                    success:function(response){
-                                        var msg = "";
-                                        if(response == 1){
-                                            window.location = "index.php";
-
-                                        }
-                                        else if(response==0){
-                                            msg = "Invalid username and password!";
-                                        }
-                                        else{
-                                            msg = response;
-                                        }
-                                        $("#message").html(msg);
-                                    }
-                                });
-                            }
-                        });
-
-                    });
-                </script>
-                <!-- end of Modal-->
     </footer> 
 </body>
 </html>
