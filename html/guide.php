@@ -2,13 +2,6 @@
 require(realpath($_SERVER["DOCUMENT_ROOT"]).'\PSW_PHP\php\functions.php');
 
 
-// Check user login or not
-if(isset($_SESSION['uname'])){
-   echo $_SESSION['uname'];
-}
-else{
-    echo "no user" ;
-}
 ?>
 
 <?php

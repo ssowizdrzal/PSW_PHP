@@ -5,7 +5,7 @@
   
 <?php
 
-function firstDir( $url ) {$parts = explode('/', $url); return ($parts [1]);};
+include(realpath($_SERVER["DOCUMENT_ROOT"]).'\PSW_PHP\php\functions_only.php');
 
 session_start();
 

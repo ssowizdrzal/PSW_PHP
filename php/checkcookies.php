@@ -12,6 +12,17 @@
       <?php
          foreach ($_COOKIE as $key => $value )
             print( "<p>$key: $value</p>" );
+
+
+         echo ("<br><br> SESSION");
+         // Check user login or not
+         session_start();
+         if(isset($_SESSION['uname'])){
+            echo $_SESSION['uname'];
+         }
+         else{
+            echo "no user" ;
+         }
       ?>
    </body>
 </html>

@@ -52,7 +52,7 @@ section > * {
     padding: 1rem;
 }
 
-form{
+main form{
     border: 2px solid var(--main-alt-color);
     padding: 1rem;
 
@@ -103,7 +103,7 @@ div.separated:not(:last-child), div.separated-full:not(:last-child) {
     margin-bottom: 8px;
 }
 
-input:not(input[type="color"]), textarea {
+main input:not(input[type="color"]), textarea {
     border-radius: 0px 20px 20px 20px;
     -webkit-border-radius: 0px 20px 20px 20px;
     -moz-border-radius: 0px 20px 20px 20px;
@@ -112,7 +112,7 @@ input:not(input[type="color"]), textarea {
     border: 1px solid var(--main-alt-color);
 }
 
-input[type="color"] {
+main input[type="color"] {
     border: none;
     outline: none;
     height: 60px;
@@ -132,7 +132,7 @@ form.form-join-us label, p {
 
 }
 
-form div:not(:last-child) {
+main form div:not(:last-child) {
  
     clear:both;
 }

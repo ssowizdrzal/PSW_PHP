@@ -1,13 +1,7 @@
 <?php
 require(realpath($_SERVER["DOCUMENT_ROOT"]).'\PSW_PHP\php\functions.php');
 
-// Check user login or not
-if(isset($_SESSION['uname'])){
-   echo $_SESSION['uname'];
-}
-else{
-    echo "no user" ;
-}
+
 ?>
 <?php
     if(isset($_POST["mybutton"])){
@@ -212,9 +206,10 @@ else{
         </form>
 
         <p>Click <a href = "/PSW_PHP/php/checkcookies.php">here</a>to read the saved cookie.</p>
-      </footer> 
-      <?php 
+        <?php 
         if(!isset($_SESSION['uname']))
-        include(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PHP_SELF'])) .'\php\login_modal.php'); ?>   
+        include(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PHP_SELF'])) .'\php\login_modal.php'); ?>  
+      </footer> 
+ 
 </body>
 </html>
