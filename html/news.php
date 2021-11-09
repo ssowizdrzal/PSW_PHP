@@ -8,15 +8,17 @@ if(isset($_SESSION['uname'])){
 else{
     echo "no user" ;
 }
-
-// if(empty($fontColor)){
-//   $fontColor = "3f3f3f";
-// }
-// if(empty($fontStyle)){
-//   $fontStyle = "Times New Roman";
-// }
-
 ?>
+
+<?php
+    if(isset($_POST["mybuttonnews"])){
+        setcookie("styl",$_POST["mybuttonnews"]);
+        
+        echo "<meta http-equiv='refresh' content='0'>";
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,8 +31,11 @@ else{
       <!-- information used to catalog a site      -->
       <meta name = "keywords" content = " lol, league, worlds, floting, see, positions, list, dropdown, nice, css">
       <meta name = "description" content = "See fully functional 3 leveled dropdown menu with extra css styling)">
+      
         <link rel="stylesheet" href="../css/global.css">
         <link rel="stylesheet" href="../css/csscss/news.css">
+        <?php include(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PHP_SELF'])) . '\php\preferencjeuzytkownika.php'); ?>
+
         <script src="../js/mouse_events_news.js"></script>
         <script src="../js/kolekcje.js"></script>
 
@@ -100,7 +105,13 @@ else{
     <footer class="footer" id="news_footer">
         <p>Autor: Dominik Sandura, Sebastian Sowizdrzał</p>
         <p><a href="mailto:242405@student.pwr.edu.pl">242405@student.pwr.edu.pl</a></p> <p><a href="mailto:242467@student.pwr.edu.pl">242467@student.pwr.edu.pl</a></p>
-        <p id="cords" name="cords"> Cords</p>
+        <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">  
+        <input type = "submit" value = "styl1" name="mybuttonnews">
+        <input type = "submit" value = "styl2" name="mybuttonnews">
+        <input type = "submit" value = "styl3" name="mybuttonnews">
+        </form>
+
+        <p>Click <a href = "/PSW_PHP/php/checkcookies.php">here</a>to read the saved cookie.</p>
         <?php 
         if(!isset($_SESSION['uname']))
         include(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PHP_SELF'])) .'\php\login_modal.php'); ?>   

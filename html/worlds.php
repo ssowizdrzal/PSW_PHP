@@ -8,15 +8,15 @@ if(isset($_SESSION['uname'])){
 else{
     echo "no user" ;
 }
-
-// if(empty($fontColor)){
-//   $fontColor = "3f3f3f";
-// }
-// if(empty($fontStyle)){
-//   $fontStyle = "Times New Roman";
-// }
-
 ?>
+<?php
+    if(isset($_POST["mybuttonw"])){
+        setcookie("styl",$_POST["mybuttonw"]);
+        
+        echo "<meta http-equiv='refresh' content='0'>";
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,6 +31,7 @@ else{
     <title>Worlds 2021</title>
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/csscss/table.css">
+    <?php include(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PHP_SELF'])) . '\php\preferencjeuzytkownika.php'); ?>
     <script src="../js/kolekcje.js"></script>
 </head>
 <body>
@@ -204,6 +205,13 @@ else{
     <footer class="footer">
         <p>Autor: Dominik Sandura, Sebastian Sowizdrzał</p>
        <a href="mailto:242405@student.pwr.edu.pl">242405@student.pwr.edu.pl</a> - <a href="mailto:242467@student.pwr.edu.pl">242467@student.pwr.edu.pl</a>
+       <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">  
+        <input type = "submit" value = "styl1" name="mybuttonw">
+        <input type = "submit" value = "styl2" name="mybuttonw">
+        <input type = "submit" value = "styl3" name="mybuttonw">
+        </form>
+
+        <p>Click <a href = "/PSW_PHP/php/checkcookies.php">here</a>to read the saved cookie.</p>
       </footer> 
       <?php 
         if(!isset($_SESSION['uname']))

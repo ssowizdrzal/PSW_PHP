@@ -9,15 +9,10 @@ if(isset($_SESSION['uname'])){
 else{
     echo "no user" ;
 }
-
-// if(empty($fontColor)){
-//   $fontColor = "3f3f3f";
-// }
-// if(empty($fontStyle)){
-//   $fontStyle = "Times New Roman";
-// }
-
 ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,7 +42,7 @@ else{
         
         <nav class="interior-nav">
          <ul>
-             <li><a href="./forms.html">Form Main</a></li>
+             <li><a href="./forms.php">Form Main</a></li>
              <li><a href="./form_personal.php">Personal</a></li>
              <li><a href="./form_personal_details.php">Personal Details</a></li>
          </ul>

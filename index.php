@@ -10,14 +10,17 @@ else{
     echo "no user" ;
 }
 
-// if(empty($fontColor)){
-//   $fontColor = "3f3f3f";
-// }
-// if(empty($fontStyle)){
-//   $fontStyle = "Times New Roman";
-// }
-
 ?>
+
+<?php
+    
+        if(isset($_POST["mybutton"])){
+            setcookie("styl",$_POST["mybutton"]);
+            
+            echo "<meta http-equiv='refresh' content='0'>";
+        }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,14 +38,14 @@ else{
          help you learn the basics information about the game called
          League of Legends. W will touch multiple basic topics,
          feel free to explore.">
+         
         <link rel="stylesheet" href="css/global.css">
-        
+        <?php include(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PHP_SELF'])) . '\php\preferencjeuzytkownika.php'); ?>
         <script src="js/on_press.js"></script>
 
 
 </head>
-<body onkeydown="showChar(event);" style="background-color: #<?php echo $fontColor; ?>;  font-family: <?php echo $fontStyle; ?>; "><?php
-  ?>
+<body onkeydown="showChar(event);">
     <header class="header">
         <div class="header-content">
             <img src="./img/lol-icon.png" alt="lol logo"> 
@@ -167,36 +170,6 @@ else{
                 </p>
             </article>
         
-        <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">  
-        <input type = "submit" value = "styl1" name="mybutton">
-        <input type = "submit" value = "styl2" name="mybutton">
-        <input type = "submit" value = "styl3" name="mybutton">
-        </form>
-        
-        <?php 
-        
-        echo $fontColor . ' ' .$fontStyle;
-            if(isset($_POST["mybutton"])){
-                if($_POST["mybutton"]=="styl1"){
-                    $fontColor="000000";
-                    $fontStyle="Times New Roman";
-
-                }
-                if($_POST["mybutton"]=="styl2"){
-                    $fontColor="3f3f3f";
-                    $fontStyle = "Arial";
-                }
-                if($_POST["mybutton"]=="styl3"){
-                    $fontColor="FF0000";
-                    $fontStyle = "Verdana";
-
-                }
-            }
-            echo $fontColor . ' ' .$fontStyle;
-
-
-      ?>
-            <p>Click <a href = "php/checkcookies.php">here</a>to read the saved cookie.</p>
         </section>
         <script src="js/przycisk.js"></script>
         
@@ -210,7 +183,13 @@ else{
         <p>Autor: Dominik Sandura, Sebastian Sowizdrzał</p>
         <a href="mailto:242405@student.pwr.edu.pl">242405@student.pwr.edu.pl</a> - <a href="mailto:242467@student.pwr.edu.pl">242467@student.pwr.edu.pl</a>
         
+        <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">  
+        <input type = "submit" value = "styl1" name="mybutton">
+        <input type = "submit" value = "styl2" name="mybutton">
+        <input type = "submit" value = "styl3" name="mybutton">
+        </form>
 
+        <p>Click <a href = "/PSW_PHP/php/checkcookies.php">here</a>to read the saved cookie.</p>
         <?php 
         if(!isset($_SESSION['uname']))
         include(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PHP_SELF'])) .'\php\login_modal.php'); ?>    
