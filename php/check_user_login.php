@@ -1,36 +1,34 @@
 <?php
 
-$user = array(
-    "sebastian" => "haslo12345",
-    "dominik" => "domi12345",
-    "admin" => "admin"
-);
+$servername = "localhost";
+$username = "admin";
+$password = "admin";
+$database = "LOLPORTAL";
+
+// Create connection to database
+$conn = new mysqli($servername, $username, $password, $database);
+ 
+ if($conn->connect_errno ) {
+    echo("Connect failed: %s<br />". $conn->connect_error);
+    exit();
+ }
 
 $uname = $_POST['username'];
 $password = $_POST['password'];
 
 if ($uname != "" && $password != ""){
 
-    $login=0;
+    $sql_query = "SELECT count(*) as cntUser FROM Users WHERE user_login='".$uname."' AND user_password='".$password."'";
+    $result = mysqli_query($conn,$sql_query);
+    $row = mysqli_fetch_array($result);
 
-    if (array_key_exists($uname, $user)) {
-        if($user[$uname]==$password){
-            $login=1;
-        }
-        else{
+    $count = $row['cntUser'];
 
-        }
-    }
-    else{
-
-    }
-    
-    if($login == 1){
+    if($count > 0){
         session_start();
         $_SESSION['uname'] = $uname;
         echo 1;
     }else{
         echo 0;
     }
-
 }

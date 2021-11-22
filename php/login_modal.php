@@ -93,42 +93,42 @@ function openTab(tabName) {
 }
 </script>
 
-    <script type="text/javascript">
-    $(document).ready(function(){
+<script type="text/javascript">
+$(document).ready(function(){
 
-        $("#but_submit").click(function(){
-            console.log ('<?php  echo firstDir(dirname($_SERVER['PHP_SELF']));?>');
-            var username = $("#us_login").val().trim();
-            var password = $("#us_pass").val().trim();
+    $("#but_submit").click(function(){
+        console.log ('<?php  echo firstDir(dirname($_SERVER['PHP_SELF']));?>');
+        var username = $("#us_login").val().trim();
+        var password = $("#us_pass").val().trim();
 
-            if( username != "" && password != "" ){
-                
-                console.log(username);
-                console.log(password);
-                $.ajax({ 
-                    url: '/' + '<?php  echo firstDir(dirname($_SERVER['PHP_SELF']));?>' + '/php/check_user_login.php',
-                    type:'post',
-                    data:{username:username,password:password},
-                    success:function(response){
-                        var msg = "";
-                        if(response == 1){
-                            location.reload();
+        if( username != "" && password != "" ){
+            
+            console.log(username);
+            console.log(password);
+            $.ajax({ 
+                url: '/' + '<?php  echo firstDir(dirname($_SERVER['PHP_SELF']));?>' + '/php/check_user_login.php',
+                type:'post',
+                data:{username:username,password:password},
+                success:function(response){
+                    var msg = "";
+                    if(response == 1){
+                        location.reload();
 
-                        }
-                        else if(response==0){
-                            msg = "Invalid username and password!";
-                        }
-                        else{
-                            msg = response;
-                        }
-                        $("#message").html(msg);
                     }
-                });
-            }
-        });
-
+                    else if(response==0){
+                        msg = "Invalid username and password!";
+                    }
+                    else{
+                        msg = response;
+                    }
+                    $("#message").html(msg);
+                }
+            });
+        }
     });
 
-    </script>
+});
+
+</script>
 <!--end of Modal scripts-->
 
