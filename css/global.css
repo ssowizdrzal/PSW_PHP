@@ -424,15 +424,18 @@ nav.global-nav button, nav.global-nav input[type="submit"], nav.global-nav input
   }
   
   /* The Close Button */
-  .close {
+  .close1,
+  .close2 {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
   }
   
-  .close:hover,
-  .close:focus {
+  .close1:hover,
+  .close1:focus,
+  .close2:hover,
+  .close2:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;

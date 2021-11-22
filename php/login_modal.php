@@ -8,7 +8,7 @@
             <button class="w3-bar-item w3-button" onclick="openTab('Rejestracja')">Rejestracja</button>
         </div> 
         <div id="Login" class ="w3-container city">
-            <span class="close">&times;</span>
+            <span class="close1">&times;</span>
           
             <form class="login-form">
 
@@ -30,7 +30,7 @@
             </form>
         </div>
         <div id="Rejestracja" class ="w3-container city" style="display:none">
-            <span class="close">&times;</span>
+            <span class="close2">&times;</span>
             
             <form class="form-personal" >
       
@@ -70,13 +70,19 @@
 
     var btn = document.getElementById("myBtn");
  
-    var span = document.getElementsByClassName("close")[0];
+    var span1 = document.getElementsByClassName("close1")[0];
+
+    var span2 = document.getElementsByClassName("close2")[0];
 
     btn.onclick = function() {
     modal.style.display = "block";
     }
-
-    span.onclick = function() {
+    if(span1 != null)
+    span1.onclick = function() {
+    modal.style.display = "none";
+    }
+    if(span2 != null)
+    span2.onclick = function() {
     modal.style.display = "none";
     }
 
@@ -174,3 +180,4 @@ $(document).ready(function(){
     });
 });
 </script>
+
