@@ -25,10 +25,11 @@ Należy skorzystać z następujących elementów języka PHP*:
 • zmienna nazwa zmiennej ($$zmienna).
 
 TASKS:
-    0.0 db_up.php - zakłada bazę danych, tworzy tabele i wypełnia bazę danymi
-    0.1 db_down.php - usuwa bazę danych
+
     0.2 zrobienie connect z baza danych
-    1. Zrobienie Modala na rejestruj/edytuj profil (edynamiczny formularz)
+
+
+
     2. zrobienie rejestracji (php) 
     2. zrobienie logowania z polaczeniem z baza danych
  
@@ -45,3 +46,11 @@ przy formułowaniu zapytań SQL?
 PHP do obsługi bazy danych MySQL. Moduł ten został wprowadzony w PHP5 i pozwala na używanie bazy za
 pomocą obiektowej składni. Poza tym obsługuje mechanizm transakcji, poprawia bezpieczeństwo i
 wydajność.
+
+
+--------------------------------------
+TASKS:
+    0.0 db_up.php - zakłada bazę danych, tworzy tabele i wypełnia bazę danymi
+    0.1 db_down.php - usuwa bazę danych
+
+    1. Zrobienie Modala na rejestruj/edytuj profil (edynamiczny formularz)
