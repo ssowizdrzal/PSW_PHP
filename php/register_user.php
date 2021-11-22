@@ -18,8 +18,7 @@ $uname = $_POST['username'];
 $password = $_POST['password'];
 $name = $_POST['name'];
 $surname = $_POST['surname'];
-echo $_SESSION['uname'];
-echo $uname . $password . $name . $surname;
+
 if(empty($uname) && isset($_SESSION['uname'])){
     $uname = $_SESSION['uname'];
 }

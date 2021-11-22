@@ -59,7 +59,26 @@ require(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PH
             <h3>Zmień dane konta!! </h3>
             
             <form class="form-personal">
-      
+                <?php
+              
+                    $servername = "localhost";
+                    $username = "admin";
+                    $password = "admin";
+                    $database = "LOLPORTAL";
+                    $conn = new mysqli($servername, $username, $password, $database);
+                    
+                    if($conn->connect_errno ) {
+                        echo("Connect to database failed");
+                        exit();
+                    }
+
+                    $sql_query = "SELECT user_password,user_name,user_surname FROM Users WHERE user_login='".$_SESSION['uname']."'";
+                    $result = mysqli_query($conn,$sql_query);
+                    $row = mysqli_fetch_array($result);
+
+                ?>
+
+
                  <input type = "hidden" name = "us_username" id="us_username"
                   value = ""> 
                     
@@ -67,15 +86,14 @@ require(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PH
 
                   <div class="separated">
                      <label>Password</label>
-                     <input id = "us_pass2" name = "us_pass2"  type = "text" size = "25" autofocus>
+                     <input id = "us_pass2" name = "us_pass2"  type = "text" size = "25" autofocus value="<?php echo $row['user_password']   ?>">
                     
                   </div>
              
-
-              
+                 
                   <div class="separated">
                      <label>Name</label>
-                     <input id = "us_name2" name = "us_name2" type = "text" size = "25" autofocus>
+                     <input id = "us_name2" name = "us_name2" type = "text" size = "25" autofocus value="<?php echo $row['user_name']   ?>">
                     
                   </div>
              
@@ -83,7 +101,7 @@ require(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PH
               
                 <div class="separated">
                    <label>Surname</label>
-                   <input  id = "us_surname2" name = "us_surname2" type = "text" size = "25" required>
+                   <input  id = "us_surname2" name = "us_surname2" type = "text" size = "25" required value="<?php echo $row['user_surname']   ?>">
                   
                 </div>
 
