@@ -13,12 +13,12 @@ $conn = new mysqli($servername, $username, $password, $database);
     exit();
  }
 
-$uname = $_POST['username'];
-$password = $_POST['password'];
+$user = $_POST['username'];
+$$user = $_POST['password'];
 
-if ($uname != "" && $password != ""){
+if ($user != "" && $$user != ""){
 
-    $sql_query = "SELECT count(*) as cntUser FROM Users WHERE user_login='".$uname."' AND user_password='".$password."'";
+    $sql_query = "SELECT count(*) as cntUser FROM Users WHERE user_login='".$user."' AND user_password='".$$user."'";
     
     $result = mysqli_query($conn,$sql_query);
     $row = mysqli_fetch_row($result);
@@ -27,7 +27,7 @@ if ($uname != "" && $password != ""){
 
     if($count > 0){
         session_start();
-        $_SESSION['uname'] = $uname;
+        $_SESSION['uname'] = $user;
         echo 1;
     }else{
         echo 0;

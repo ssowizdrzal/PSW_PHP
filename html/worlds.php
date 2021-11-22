@@ -25,7 +25,7 @@ require(realpath($_SERVER["DOCUMENT_ROOT"]).'\PSW_PHP\php\functions.php');
     <title>Worlds 2021</title>
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/csscss/table.css">
-    <?php include(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PHP_SELF'])) . '\php\preferencjeuzytkownika.php'); ?>
+    <?php #include(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PHP_SELF'])) . '\php\preferencjeuzytkownika.php'); ?>
     <script src="../js/kolekcje.js"></script>
 </head>
 <body>

@@ -60,7 +60,7 @@
     # INSERT
 
     $sql_insert = "INSERT INTO $tablename (user_login, user_password, user_name, user_surname)
-        VALUES ('admin', 'admin', 'Dominik', 'Sebastian')";
+        VALUES ('admin', 'admin', 'Dominika xD', 'Sebastian')";
 
     if ($conn->query($sql_insert) === TRUE) {
         echo "New records created successfully <br>";
