@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $servername = "localhost";
 $username = "admin";
 $password = "admin";
@@ -16,12 +18,12 @@ $uname = $_POST['username'];
 $password = $_POST['password'];
 $name = $_POST['name'];
 $surname = $_POST['surname'];
-
-if($uname=="" && isset($_SESSION['uname'])){
+echo $_SESSION['uname'];
+echo $uname . $password . $name . $surname;
+if(empty($uname) && isset($_SESSION['uname'])){
     $uname = $_SESSION['uname'];
 }
 if ($uname != "" && $password != "" && $name != "" && $surname != ""){
-    echo $uname . $password . $name . $surname;
 
     $result = mysqli_query($conn, "SELECT count(*) FROM Users WHERE user_login=$uname");
 
@@ -29,14 +31,20 @@ if ($uname != "" && $password != "" && $name != "" && $surname != ""){
 
     $count = $row[0];
 
+    $username=$_POST['password'];
+
+    
+
     if ($count > 0) {
         if(isset($_SESSION['uname'])){
-            $sql = "UPDATE Users SET user_password='$password' WHERE user_login=$uname";
-            $result = mysqli_query($conn,$sql);  
-            $sql = "UPDATE Users SET user_name='$name' WHERE user_login=$uname";
-            $result = mysqli_query($conn,$sql);  
-            $sql = "UPDATE Users SET user_surname='$surname' WHERE user_login=$uname";
-            $result = mysqli_query($conn,$sql);  
+           
+            $sql_update1 = "UPDATE Users SET user_password = '$password' WHERE user_login = $uname";
+            $conn→query($sql_update1);
+            $sql_update2 = "UPDATE Users SET user_name = '$name' WHERE user_login = $uname";
+            $conn→query($sql_update2);
+            $sql_update3 = "UPDATE Users SET user_surname = '$surname' WHERE user_login = $uname";
+            $conn→query($sql_update3);
+         
             echo 1;
         }else{
             echo "Uzytkownik juz istnieje";
