@@ -26,7 +26,7 @@ Należy skorzystać z następujących elementów języka PHP*:
 
 TASKS:
 
-    0.2 zrobienie connect z baza danych
+   
 
 
 
@@ -52,5 +52,5 @@ wydajność.
 TASKS:
     0.0 db_up.php - zakłada bazę danych, tworzy tabele i wypełnia bazę danymi
     0.1 db_down.php - usuwa bazę danych
-
+    0.2 zrobienie connect z baza danych
     1. Zrobienie Modala na rejestruj/edytuj profil (edynamiczny formularz)
