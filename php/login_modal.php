@@ -48,7 +48,7 @@
                 </div>
                <div class="form-buttons">
                     <div class="separated">
-                        <input type = "submit" value = "Submit" name="but_submit2" id="but_submit2"  >
+                        <input type = "button" value = "Submit" name="but_submit2" id="but_submit2"  >
                         <input type = "reset" value = "Clear">
                     </div>  
                </div>   
@@ -128,6 +128,9 @@ $(document).ready(function(){
         }
     });
 });
+</script>
+
+<script type="text/javascript">
 $(document).ready(function(){
     $("#but_submit2").click(function(){
         console.log ('<?php  echo firstDir(dirname($_SERVER['PHP_SELF']));?>');
@@ -161,7 +164,7 @@ $(document).ready(function(){
                 }
             });
         }else{
-            $("#message2").html("Nie podales danych kurwo");
+            $("#message2").html(" Please Insert all data ");
         }
     });
 });

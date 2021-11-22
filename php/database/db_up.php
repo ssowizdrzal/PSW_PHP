@@ -46,8 +46,8 @@
         user_id INT AUTO_INCREMENT PRIMARY KEY,
         user_login VARCHAR(30) NOT NULL UNIQUE,
         user_password VARCHAR(30) NOT NULL,
-        user_name VARCHAR(30) NOT NULL,
-        user_surname VARCHAR(30) NOT NULL,
+        user_name VARCHAR(30),
+        user_surname VARCHAR(30),
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )";
 
