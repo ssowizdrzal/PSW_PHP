@@ -9,7 +9,7 @@ $database = "LOLPORTAL";
 $conn = new mysqli($servername, $username, $password, $database);
  
  if($conn->connect_errno ) {
-    echo("Connect failed: %s<br />". $conn->connect_error);
+    echo("Connect to database failed");
     exit();
  }
 
@@ -19,10 +19,11 @@ $password = $_POST['password'];
 if ($uname != "" && $password != ""){
 
     $sql_query = "SELECT count(*) as cntUser FROM Users WHERE user_login='".$uname."' AND user_password='".$password."'";
+    
     $result = mysqli_query($conn,$sql_query);
-    $row = mysqli_fetch_array($result);
+    $row = mysqli_fetch_row($result);
 
-    $count = $row['cntUser'];
+    $count = $row[0];
 
     if($count > 0){
         session_start();
