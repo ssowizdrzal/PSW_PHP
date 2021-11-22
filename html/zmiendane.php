@@ -108,7 +108,6 @@ require(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PH
                <div class="form-buttons">
                     <div class="separated">
                         <input type = "button" value = "Submit" name="but_submit3" id="but_submit3">
-                        <input type = "reset" value = "Clear">
                     </div>  
                 
                </div>   
