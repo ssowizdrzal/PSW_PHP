@@ -24,12 +24,6 @@
             
             <form class="form-personal" >
       
-               <input type = "hidden" name = "recipient"
-                  value = "#">
-               <input type = "hidden" name = "subject" 
-                  value = "Personal Form">
-               <input type = "hidden" name = "redirect" 
-                  value = "#"> 
                   <div class="separated">
                      <label>Login</label>
                      <input id = "us_login2" name = "us_login2" type = "text" size = "25" autofocus placeholder="login"><br>
@@ -40,7 +34,7 @@
                   </div>
                   <div class="separated">
                      <label>Name</label><br>
-                     <input  id = "us_name2" name = "us_name2"type = "text" size = "25" autofocus placeholder="name"><br>
+                     <input  id = "us_name2" name = "us_name2" type = "text" size = "25" autofocus placeholder="name"><br>
                   </div>
                 <div class="separated">
                    <label>Surname</label><br>
