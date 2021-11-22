@@ -2,19 +2,11 @@
 
 require(realpath($_SERVER["DOCUMENT_ROOT"]).'\PSW_PHP\php\functions.php');
 
-// Check user login or not
-if(isset($_SESSION['uname'])){
-   echo $_SESSION['uname'];
-}
-else{
-    echo "no user" ;
-}
+
 ?>
 
 <?php
-        foreach ($_COOKIE as $key => $value )
-        print( "<p>$key: $value</p>" );
-        var_dump($_COOKIE);
+    
 
         if(isset($_POST["mybutton"])){
             setcookie("styl",$_POST["mybutton"], time() + (86400 * 30), "/");
