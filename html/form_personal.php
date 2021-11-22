@@ -45,7 +45,7 @@ require(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PH
        <section>
          <h2>Forms</h2>
          <article>
-            <h3>  Personal form!</h3>
+            <h3>  ZMIEŃ DANE KONTA!! </h3>
             
             <form class="form-personal" method = "post" action = "../php/form_details.php" autocomplete="on">
       
@@ -55,6 +55,13 @@ require(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PH
                   value = "Personal Form">
                <input type = "hidden" name = "redirect" 
                   value = "#"> 
+                   
+                  <div class="separated">
+                     <label>Password</label>
+                     <input name = "password" type = "text" size = "25" autofocus>
+                    
+                  </div>
+             
 
               
                   <div class="separated">
@@ -70,48 +77,6 @@ require(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PH
                    <input name = "surname" type = "text" size = "25" required>
                   
                 </div>
-         
-
-             
-                  <div class="separated">
-                     <label>Month of birth</label>
-                     <input list="months" name="month" id="month">
-                     <datalist id="months">
-                        <option value="January"> </option>
-                        <option value="February"> </option>
-                        <option value="March"> </option>
-                        <option value="April"> </option>
-                        <option value="May"> </option>
-                        <option value="June"> </option>
-                        <option value="July"> </option>
-                        <option value="August"> </option>
-                        <option value="September "></option>
-                        <option value="October"> </option>
-                        <option value="November"> </option>
-                        <option value="December"></option>    
-                    </datalist>
-                     
-                  </div>
-              
-                  <div class="separated-full">
-                     <label>E-mail</label>
-                     <input name = "email" type = "text" size = "25"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
-                     <p class="format-inf">in the format name@domain.xyz</p>
-                  </div>
-
-                  <div class="separated-full">
-                     <label>Swoje samopoczucie od 0 do 9</label>
-                     <input name = "samopoczucie" type = "number" size = "1"  required/>
-                  </div>
-
-               
-                  <div class="separated-full">
-                     <label>Phone numb</label>
-                     <input type="tel" id="phone" name="phone" size = "25" 
-                     pattern="[0-9]{9}">
-                     <p class="format-inf">in the format 123456789</p>
-                  </div>
-             
 
                <div class="form-buttons">
                     <div class="separated">
@@ -124,11 +89,7 @@ require(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PH
  
          </article>
        </section>
-       <button onclick="getFormLength()">Liczba Formów</button>
-       <p id="demo"></p>
-       <button onclick="getAllForms()">Raport formów</button>
-       <div class="divraportformow" id="divraportformow">
-         <p id="demo2"></p>
+       
     </div>
    </main>
 

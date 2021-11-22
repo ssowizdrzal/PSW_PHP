@@ -10,6 +10,7 @@
             <label >Password: <label><br>
             <input type="password" id="us_pass" name="us_pass" placeholder="password"><br>
             <input type="button" value="Submit" name="but_submit" id="but_submit" />
+            <a href="./html/rejestracja.php">Rejestracja</a> 
             <div id="message"></div>
         </form>
     </div>

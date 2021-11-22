@@ -62,6 +62,7 @@ require(realpath($_SERVER["DOCUMENT_ROOT"]).'\PSW_PHP\php\functions.php');
         </section>
     
         <section class="blog-posts">
+        <a href="./html/rejestracja.php">Rejestracja</a> 
             <h2 id="top-header" ><b>Recent News</b></h2>
             <p>Check our recent news</p>
             <p>Access to our website is completly free ( 0 &#8364; )!</p>
