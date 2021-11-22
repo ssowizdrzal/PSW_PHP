@@ -11,11 +11,21 @@
             <span class="close">&times;</span>
           
             <form class="login-form">
-                <label >Login: <label>
-                <input type="text" id="us_login" name="us_login" placeholder="login"><br>
-                <label >Password: <label><br>
-                <input type="password" id="us_pass" name="us_pass" placeholder="password"><br>
-                <input type="button" value="Submit" name="but_submit" id="but_submit" />
+
+                <div class="separated">
+                    <label>Login</label>
+                    <input id = "us_login" name = "us_login" type = "text" size = "25"  placeholder="login"><br>
+                </div>
+                <div class="separated">
+                    <label>Password</label><br>
+                    <input id = "us_pass" name = "us_pass" type = "text" size = "25"  placeholder="password"><br>
+                </div>
+                <div class="form-buttons">
+                        <div class="separated">
+                            <input type = "button" value = "Submit" name="but_submit" id="but_submit"  >
+                            <input type = "reset" value = "Clear">
+                        </div>  
+                </div> 
                 <div id="message"></div>
             </form>
         </div>
@@ -26,15 +36,15 @@
       
                   <div class="separated">
                      <label>Login</label>
-                     <input id = "us_login2" name = "us_login2" type = "text" size = "25" autofocus placeholder="login"><br>
+                     <input id = "us_login2" name = "us_login2" type = "text" size = "25"  placeholder="login"><br>
                   </div>
                   <div class="separated">
                      <label>Password</label><br>
-                     <input id = "us_pass2" name = "us_pass2" type = "text" size = "25" autofocus placeholder="password"><br>
+                     <input id = "us_pass2" name = "us_pass2" type = "text" size = "25"  placeholder="password"><br>
                   </div>
                   <div class="separated">
                      <label>Name</label><br>
-                     <input  id = "us_name2" name = "us_name2" type = "text" size = "25" autofocus placeholder="name"><br>
+                     <input  id = "us_name2" name = "us_name2"type = "text" size = "25"  placeholder="name"><br>
                   </div>
                 <div class="separated">
                    <label>Surname</label><br>
@@ -146,7 +156,8 @@ $(document).ready(function(){
                 success:function(response){
                     var msg = "";
                     if(response == 1){
-                        location.reload();
+                        openTab('Login');
+                        $("#message").html("New account created, please login now");
                     }
                     else if(response==0){
                         msg = "Invalid username and password!";

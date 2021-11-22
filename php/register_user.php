@@ -30,9 +30,6 @@ if ($uname != "" && $password != "" && $name != "" && $surname != ""){
     $row = mysqli_fetch_row($result);
 
     $count = $row[0];
-
-    $username=$_POST['password'];
-
     
 
     if ($count > 0) {
