@@ -71,7 +71,7 @@ require(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PH
                 
                   <div class="separated">
                      <label>Password</label>
-                     <input name = "password" type = "text" size = "25" autofocus>
+                     <input id = "us_pass2" name = "us_pass2"  type = "text" size = "25" autofocus>
                     
                   </div>
              
@@ -79,7 +79,7 @@ require(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PH
               
                   <div class="separated">
                      <label>Name</label>
-                     <input name = "name" type = "text" size = "25" autofocus>
+                     <input id = "us_name2" name = "us_name2" type = "text" size = "25" autofocus>
                     
                   </div>
              
@@ -87,13 +87,13 @@ require(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PH
               
                 <div class="separated">
                    <label>Surname</label>
-                   <input name = "surname" type = "text" size = "25" required>
+                   <input  id = "us_surname2" name = "us_surname2" type = "text" size = "25" required>
                   
                 </div>
 
                <div class="form-buttons">
                     <div class="separated">
-                        <input type = "submit" value = "Submit">
+                        <input type = "button" value = "Submit" name="but_submit3" id="but_submit3">
                         <input type = "reset" value = "Clear">
                     </div>  
                 
@@ -121,3 +121,41 @@ require(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PH
     <!--end of Footer bar-->
 </body>
 </html>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+    $("#but_submit3").click(function(){
+        console.log ('<?php  echo firstDir(dirname($_SERVER['PHP_SELF']));?>');
+        var password = $("#us_pass2").val().trim();
+        var name = $("#us_name2").val().trim();
+        var surname = $("#us_surname2").val().trim();
+
+        if(password != ""  && name != "" && surname != ""){
+            
+            console.log(password);
+            console.log(name);
+            console.log(surname);
+            $.ajax({ 
+                url: '/' + '<?php  echo firstDir(dirname($_SERVER['PHP_SELF']));?>' + '/php/register_user.php',
+                type:'post',
+                data:{password:password, name:name, surname:surname},
+                success:function(response){
+                    var msg = "";
+                    if(response == 1){
+                        location.reload();
+                    }
+                    else if(response==0){
+                        msg = "Invalid username and password!";
+                    }
+                    else{
+                        msg = response;
+                    }
+                    $("#message2").html(msg);
+                }
+            });
+        }else{
+            $("#message2").html("Nie podales danych kurwo");
+        }
+    });
+});
+</script>
