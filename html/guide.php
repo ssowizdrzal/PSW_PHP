@@ -28,7 +28,7 @@ require(realpath($_SERVER["DOCUMENT_ROOT"]).'\PSW_PHP\php\functions.php');
       <meta name = "description" content = "We will help you select right role for u">
         <link rel="stylesheet" href="../css/global.css">
         <link rel="stylesheet" href="../css/guide.css">
-        <?php include(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PHP_SELF'])) . '\php\preferencjeuzytkownika.php'); ?>
+        <?php #include(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PHP_SELF'])) . '\php\preferencjeuzytkownika.php'); ?>
         <script src="../js/miniony.js"></script>
 </head>
 <body>
