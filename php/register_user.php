@@ -25,7 +25,7 @@ if(empty($uname) && isset($_SESSION['uname'])){
 }
 if ($uname != "" && $password != "" && $name != "" && $surname != ""){
 
-    $result = mysqli_query($conn, "SELECT count(*) FROM Users WHERE user_login=$uname");
+    $result = mysqli_query($conn, "SELECT count(*) FROM Users WHERE user_login='".$uname."'");
 
     $row = mysqli_fetch_row($result);
 
@@ -35,12 +35,12 @@ if ($uname != "" && $password != "" && $name != "" && $surname != ""){
     if ($count > 0) {
         if(isset($_SESSION['uname'])){
            
-            $sql_update1 = "UPDATE Users SET user_password = '$password' WHERE user_login = $uname";
-            $conn→query($sql_update1);
-            $sql_update2 = "UPDATE Users SET user_name = '$name' WHERE user_login = $uname";
-            $conn→query($sql_update2);
-            $sql_update3 = "UPDATE Users SET user_surname = '$surname' WHERE user_login = $uname";
-            $conn→query($sql_update3);
+            $sql_update1 = "UPDATE Users SET user_password = '".$password."' WHERE user_login='".$uname."'";
+            $conn->query($sql_update1);
+            $sql_update2 = "UPDATE Users SET user_name = '".$name."' WHERE user_login='".$uname."'";
+            $conn->query($sql_update2);
+            $sql_update3 = "UPDATE Users SET user_surname = '".$surname."' WHERE user_login='".$uname."'";
+            $conn->query($sql_update3);
          
             echo 1;
         }else{
