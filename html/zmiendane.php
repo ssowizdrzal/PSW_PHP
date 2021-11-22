@@ -21,7 +21,7 @@ require(realpath($_SERVER["DOCUMENT_ROOT"]).'\PSW_PHP\php\functions.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REJESTRACJA</title>
+    <title>Zmień dane</title>
 
       <!-- <meta> tags provide search engines with -->
       <!-- information used to catalog a site      -->
@@ -54,9 +54,8 @@ require(realpath($_SERVER["DOCUMENT_ROOT"]).'\PSW_PHP\php\functions.php');
     </header>
     <main>
     <section>
-         <h2>Forms</h2>
          <article>
-            <h3>  REJESTRACJA!! </h3>
+            <h3>Zmień dane konta!! </h3>
             
             <form class="form-personal" method = "post" action = "../php/form_details.php" autocomplete="on">
       
@@ -68,13 +67,6 @@ require(realpath($_SERVER["DOCUMENT_ROOT"]).'\PSW_PHP\php\functions.php');
                   value = "#"> 
 
                 
-                  <div class="separated">
-                     <label>Login</label>
-                     <input name = "login" type = "text" size = "25" autofocus>
-                    
-                  </div>
-             
-
                 
                   <div class="separated">
                      <label>Password</label>
