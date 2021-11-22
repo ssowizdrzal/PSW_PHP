@@ -61,7 +61,7 @@ require(realpath($_SERVER["DOCUMENT_ROOT"]).'\PSW_PHP\php\functions.php');
         </section>
     
         <section class="blog-posts">
-        <a href="./html/zmiendane.php">Zmien dane konta</a> 
+            <a href="./html/zmiendane.php">Zmien dane konta</a> 
             <h2 id="top-header" ><b>Recent News</b></h2>
             <p>Check our recent news</p>
             <p>Access to our website is completly free ( 0 &#8364; )!</p>
@@ -187,9 +187,14 @@ require(realpath($_SERVER["DOCUMENT_ROOT"]).'\PSW_PHP\php\functions.php');
 
         <p>Click <a href = "/PSW_PHP/php/checkcookies.php">here</a>to read the saved cookie.</p>
         <?php 
-        if(!isset($_SESSION['uname']))
-        include(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PHP_SELF'])) .'\php\login_modal.php'); ?>    
-
+        if(!isset($_SESSION['uname'])){
+            include(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PHP_SELF'])) .'\php\login_modal.php'); 
+        }
+        else 
+        {
+            include(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PHP_SELF'])) .'\php\change_account_settings.php'); 
+        }
+        ?>
     </footer> 
 </body>
 </html>
