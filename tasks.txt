@@ -15,13 +15,7 @@ Proszę spreparować osobny skrypt „diagnostyczny”, który będzie ujawniał
 oraz umożliwiał filtrowanie wierszy po zadanych polach.
 
 Należy skorzystać z następujących elementów języka PHP*:
-• mysqli_connect(),
-• mysqli_query(),
-• mysqli_fetch_row(),
-• mysqli_error(),
-• mysqli_close();
 • quotemeta(),
-• die(),
 • zmienna nazwa zmiennej ($$zmienna).
 
 TASKS:
@@ -54,3 +48,12 @@ TASKS:
     0.1 db_down.php - usuwa bazę danych
     0.2 zrobienie connect z baza danych
     1. Zrobienie Modala na rejestruj/edytuj profil (edynamiczny formularz)
+
+
+Należy skorzystać z następujących elementów języka PHP*:
+• mysqli_connect(),
+• mysqli_query(),
+• mysqli_fetch_row(),
+• mysqli_error(),
+• mysqli_close();
+• die(),
