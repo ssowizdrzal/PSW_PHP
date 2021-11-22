@@ -48,7 +48,7 @@
                 </div>
                <div class="form-buttons">
                     <div class="separated">
-                        <input type = "submit" value = "Submit" name="but_submit2" id="but_submit2"  >
+                        <input type = "button" value = "Submit" name="but_submit2" id="but_submit2"  >
                         <input type = "reset" value = "Clear">
                     </div>  
                </div>   
