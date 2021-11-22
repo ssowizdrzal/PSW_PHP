@@ -22,7 +22,7 @@
         <div id="Rejestracja" class ="w3-container city" style="display:none">
             <span class="close">&times;</span>
             
-            <form class="form-personal" method = "post" action = "../php/form_details.php" autocomplete="on">
+            <form class="form-personal" >
       
                <input type = "hidden" name = "recipient"
                   value = "#">
@@ -32,26 +32,27 @@
                   value = "#"> 
                   <div class="separated">
                      <label>Login</label>
-                     <input name = "login" type = "text" size = "25" autofocus><br>
+                     <input id = "us_login2" name = "us_login2" type = "text" size = "25" autofocus placeholder="login"><br>
                   </div>
                   <div class="separated">
                      <label>Password</label><br>
-                     <input name = "password" type = "text" size = "25" autofocus><br>
+                     <input id = "us_pass2" name = "us_pass2" type = "text" size = "25" autofocus placeholder="password"><br>
                   </div>
                   <div class="separated">
                      <label>Name</label><br>
-                     <input name = "name" type = "text" size = "25" autofocus><br>
+                     <input  id = "us_name2" name = "us_name2"type = "text" size = "25" autofocus placeholder="name"><br>
                   </div>
                 <div class="separated">
                    <label>Surname</label><br>
-                   <input name = "surname" type = "text" size = "25" required><br>
+                   <input  id = "us_surname2" name = "us_surname2"  type = "text" size = "25" placeholder="surname"><br>
                 </div>
                <div class="form-buttons">
                     <div class="separated">
-                        <input type = "submit" value = "Submit">
+                        <input type = "submit" value = "Submit" name="but_submit2" id="but_submit2"  >
                         <input type = "reset" value = "Clear">
                     </div>  
                </div>   
+               <div id="message2"></div>
             </form>
         </div>
     </div>
@@ -76,9 +77,9 @@
     }
 
     window.onclick = function(event) {
-    if (event.target == modal) {
-    modal.style.display = "none";
-    }
+        if (event.target == modal) {
+        modal.style.display = "none";
+        }
     }
 </script>
 
@@ -126,9 +127,42 @@ $(document).ready(function(){
             });
         }
     });
-
 });
+$(document).ready(function(){
+    $("#but_submit2").click(function(){
+        console.log ('<?php  echo firstDir(dirname($_SERVER['PHP_SELF']));?>');
+        var username = $("#us_login2").val().trim();
+        var password = $("#us_pass2").val().trim();
+        var name = $("#us_name2").val().trim();
+        var surname = $("#us_surname2").val().trim();
 
+        if( username != "" && password != ""  && name != "" && surname != ""){
+            
+            console.log(username);
+            console.log(password);
+            console.log(name);
+            console.log(surname);
+            $.ajax({ 
+                url: '/' + '<?php  echo firstDir(dirname($_SERVER['PHP_SELF']));?>' + '/php/register_user.php',
+                type:'post',
+                data:{username:username,password:password, name:name, surname:surname},
+                success:function(response){
+                    var msg = "";
+                    if(response == 1){
+                        location.reload();
+                    }
+                    else if(response==0){
+                        msg = "Invalid username and password!";
+                    }
+                    else{
+                        msg = response;
+                    }
+                    $("#message2").html(msg);
+                }
+            });
+        }else{
+            $("#message2").html("Nie podales danych kurwo");
+        }
+    });
+});
 </script>
-<!--end of Modal scripts-->
-
