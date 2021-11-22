@@ -24,7 +24,7 @@ if ($uname != "" && $password != ""){
     else{
 
     }
-
+    
     if($login == 1){
         session_start();
         $_SESSION['uname'] = $uname;
