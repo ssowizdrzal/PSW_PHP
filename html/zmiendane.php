@@ -37,7 +37,7 @@ require(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PH
         <script src="../js/kolekcje.js"></script>
 
 </head>
-<body onmousedown="showCoords(event) ">
+<body>
     <header class="header">
         <div class="header-content">
             <div class="parent-animacja"> 
@@ -58,17 +58,13 @@ require(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PH
          <article>
             <h3>Zmień dane konta!! </h3>
             
-            <form class="form-personal" method = "post" action = "../php/form_details.php" autocomplete="on">
+            <form class="form-personal">
       
-               <input type = "hidden" name = "recipient"
-                  value = "#">
-               <input type = "hidden" name = "subject" 
-                  value = "Personal Form">
-               <input type = "hidden" name = "redirect" 
-                  value = "#"> 
+                 <input type = "hidden" name = "us_username" id="us_username"
+                  value = ""> 
+                    
 
-                
-                
+
                   <div class="separated">
                      <label>Password</label>
                      <input id = "us_pass2" name = "us_pass2"  type = "text" size = "25" autofocus>
@@ -98,6 +94,7 @@ require(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PH
                     </div>  
                 
                </div>   
+               <div class="message" id="message">
             </form>
  
          </article>
@@ -126,19 +123,20 @@ require(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PH
     $(document).ready(function(){
     $("#but_submit3").click(function(){
         console.log ('<?php  echo firstDir(dirname($_SERVER['PHP_SELF']));?>');
+        var username = $("#us_username").val().trim();
         var password = $("#us_pass2").val().trim();
         var name = $("#us_name2").val().trim();
         var surname = $("#us_surname2").val().trim();
 
         if(password != ""  && name != "" && surname != ""){
-            
+            console.log(username);
             console.log(password);
             console.log(name);
             console.log(surname);
             $.ajax({ 
                 url: '/' + '<?php  echo firstDir(dirname($_SERVER['PHP_SELF']));?>' + '/php/register_user.php',
                 type:'post',
-                data:{password:password, name:name, surname:surname},
+                data:{username:username,password:password, name:name, surname:surname},
                 success:function(response){
                     var msg = "";
                     if(response == 1){
@@ -150,11 +148,11 @@ require(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PH
                     else{
                         msg = response;
                     }
-                    $("#message2").html(msg);
+                    $("#message").html(msg);
                 }
             });
         }else{
-            $("#message2").html("Nie podales danych kurwo");
+            $("#message").html("Nie podales danych ");
         }
     });
 });
