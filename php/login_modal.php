@@ -11,7 +11,7 @@
             <span class="close">&times;</span>
           
             <form class="login-form">
-                <label >Login: <label><br>
+                <label >Login: <label>
                 <input type="text" id="us_login" name="us_login" placeholder="login"><br>
                 <label >Password: <label><br>
                 <input type="password" id="us_pass" name="us_pass" placeholder="password"><br>
@@ -32,19 +32,19 @@
                   value = "#"> 
                   <div class="separated">
                      <label>Login</label>
-                     <input name = "login" type = "text" size = "25" autofocus>
+                     <input name = "login" type = "text" size = "25" autofocus><br>
                   </div>
                   <div class="separated">
-                     <label>Password</label>
-                     <input name = "password" type = "text" size = "25" autofocus>
+                     <label>Password</label><br>
+                     <input name = "password" type = "text" size = "25" autofocus><br>
                   </div>
                   <div class="separated">
-                     <label>Name</label>
-                     <input name = "name" type = "text" size = "25" autofocus>
+                     <label>Name</label><br>
+                     <input name = "name" type = "text" size = "25" autofocus><br>
                   </div>
                 <div class="separated">
-                   <label>Surname</label>
-                   <input name = "surname" type = "text" size = "25" required>
+                   <label>Surname</label><br>
+                   <input name = "surname" type = "text" size = "25" required><br>
                 </div>
                <div class="form-buttons">
                     <div class="separated">
