@@ -10,8 +10,7 @@ require(realpath($_SERVER["DOCUMENT_ROOT"]).'\\' . firstDir(dirname($_SERVER['PH
         //     setcookie("styl",$_POST["mybutton"], time() + (86400 * 30), "/");
             
         //     echo "<meta http-equiv='refresh' content='0'>";
-
-            
+ 
         // } 
 ?>
 
